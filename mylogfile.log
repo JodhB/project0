@@ -1,0 +1,1355 @@
+13 03 2022 - 16:42:42.576 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+13 03 2022 - 16:42:42.588 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @425ms to org.eclipse.jetty.util.log.Slf4jLog
+13 03 2022 - 16:42:42.592 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+13 03 2022 - 16:42:42.614 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+13 03 2022 - 16:42:42.614 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+13 03 2022 - 16:42:42.888 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+13 03 2022 - 16:42:42.889 [main] INFO  io.javalin.Javalin - Javalin started in 301ms \o/
+13 03 2022 - 16:43:30.398 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 16:43:30.598 [JettyServerThreadPool-14] WARN  io.javalin.Javalin - Uncaught exception
+com.fasterxml.jackson.core.JsonParseException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries
+ at [Source: (String)"{
+    "firstName": "Philip",
+    "lastName": "Fry",
+    "address": "100 West 57th Street"
+    "dateOfBirth": "1974-08-14"
+}"; line: 5, column: 6]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:735)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:659)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._skipComma(ReaderBasedJsonParser.java:2382)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextFieldName(ReaderBasedJsonParser.java:947)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:320)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at io.javalin.plugin.json.JavalinJackson.fromJsonString(JavalinJackson.kt:37)
+	at io.javalin.http.Context.bodyAsClass(Context.kt:114)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:28)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 16:44:28.221 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 16:44:28.222 [JettyServerThreadPool-17] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Invalid address. Input was 100 West 57th Street
+13 03 2022 - 16:44:57.831 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 16:44:57.831 [JettyServerThreadPool-14] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Invalid address. Input was 100 West Street
+13 03 2022 - 18:27:25.031 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+13 03 2022 - 18:27:25.031 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @393ms to org.eclipse.jetty.util.log.Slf4jLog
+13 03 2022 - 18:27:25.031 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+13 03 2022 - 18:27:25.046 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+13 03 2022 - 18:27:25.046 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+13 03 2022 - 18:27:25.312 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+13 03 2022 - 18:27:25.312 [main] INFO  io.javalin.Javalin - Javalin started in 281ms \o/
+13 03 2022 - 18:27:46.149 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 18:27:48.292 [JettyServerThreadPool-15] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "jodh_"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:646)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+	at org.postgresql.Driver.makeConnection(Driver.java:400)
+	at org.postgresql.Driver.connect(Driver.java:259)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.revature.utility.ConnectionUtility.getConnection(ConnectionUtility.java:24)
+	at com.revature.dao.ClientDao.addClient(ClientDao.java:55)
+	at com.revature.service.ClientService.addClient(ClientService.java:43)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:29)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 18:31:22.027 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+13 03 2022 - 18:31:22.043 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @394ms to org.eclipse.jetty.util.log.Slf4jLog
+13 03 2022 - 18:31:22.043 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+13 03 2022 - 18:31:22.074 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+13 03 2022 - 18:31:22.074 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+13 03 2022 - 18:31:22.324 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+13 03 2022 - 18:31:22.324 [main] INFO  io.javalin.Javalin - Javalin started in 281ms \o/
+13 03 2022 - 18:31:30.309 [JettyServerThreadPool-18] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 18:31:32.257 [JettyServerThreadPool-18] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "jodh_"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:646)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+	at org.postgresql.Driver.makeConnection(Driver.java:400)
+	at org.postgresql.Driver.connect(Driver.java:259)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.revature.utility.ConnectionUtility.getConnection(ConnectionUtility.java:24)
+	at com.revature.dao.ClientDao.addClient(ClientDao.java:55)
+	at com.revature.service.ClientService.addClient(ClientService.java:43)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:29)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 18:54:50.221 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+13 03 2022 - 18:54:50.237 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @437ms to org.eclipse.jetty.util.log.Slf4jLog
+13 03 2022 - 18:54:50.237 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+13 03 2022 - 18:54:50.253 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+13 03 2022 - 18:54:50.253 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+13 03 2022 - 18:54:50.518 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+13 03 2022 - 18:54:50.518 [main] INFO  io.javalin.Javalin - Javalin started in 281ms \o/
+13 03 2022 - 18:55:00.533 [JettyServerThreadPool-18] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 18:55:02.458 [JettyServerThreadPool-18] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: null value in column "date_of_birth" of relation "clients" violates not-null constraint
+  Detail: Failing row contains (3, Philip, Fry, 100 West 57th Street, null).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:134)
+	at com.revature.dao.ClientDao.addClient(ClientDao.java:64)
+	at com.revature.service.ClientService.addClient(ClientService.java:43)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:29)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 18:56:35.241 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 18:56:36.209 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: null value in column "date_of_birth" of relation "clients" violates not-null constraint
+  Detail: Failing row contains (4, Philip, Fry, 100 West 57th Street, null).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:134)
+	at com.revature.dao.ClientDao.addClient(ClientDao.java:64)
+	at com.revature.service.ClientService.addClient(ClientService.java:43)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:29)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 18:58:18.392 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 18:58:18.393 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
+com.fasterxml.jackson.core.JsonParseException: Unexpected character ('L' (code 76)): was expecting comma to separate Object entries
+ at [Source: (String)"{
+    "firstName": "Philip",
+    "lastName": "Fry",
+    "address": "100 West 57th Street",
+    "dateOfBirth": 100L
+}"; line: 5, column: 24]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:735)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:659)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._skipComma(ReaderBasedJsonParser.java:2382)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextFieldName(ReaderBasedJsonParser.java:947)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:320)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at io.javalin.plugin.json.JavalinJackson.fromJsonString(JavalinJackson.kt:37)
+	at io.javalin.http.Context.bodyAsClass(Context.kt:114)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:28)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 18:59:04.766 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 18:59:04.768 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.sql.Date` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (String)"{
+    "firstName": "Philip",
+    "lastName": "Fry",
+    "address": "100 West 57th Street",
+    "dateOfBirth": {"fastTime": 100}
+}"; line: 5, column: 20] (through reference chain: com.revature.model.Client["dateOfBirth"])
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1741)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1515)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1420)
+	at com.fasterxml.jackson.databind.DeserializationContext.extractScalarFromObject(DeserializationContext.java:932)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseDate(StdDeserializer.java:1198)
+	at com.fasterxml.jackson.databind.deser.std.DateDeserializers$DateBasedDeserializer._parseDate(DateDeserializers.java:201)
+	at com.fasterxml.jackson.databind.deser.std.DateDeserializers$SqlDateDeserializer.deserialize(DateDeserializers.java:331)
+	at com.fasterxml.jackson.databind.deser.std.DateDeserializers$SqlDateDeserializer.deserialize(DateDeserializers.java:311)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:313)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at io.javalin.plugin.json.JavalinJackson.fromJsonString(JavalinJackson.kt:37)
+	at io.javalin.http.Context.bodyAsClass(Context.kt:114)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:28)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 19:00:42.808 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 19:00:43.776 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: null value in column "date_of_birth" of relation "clients" violates not-null constraint
+  Detail: Failing row contains (5, Philip, Fry, 100 West 57th Street, null).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:134)
+	at com.revature.dao.ClientDao.addClient(ClientDao.java:64)
+	at com.revature.service.ClientService.addClient(ClientService.java:43)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:29)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 19:13:30.064 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+13 03 2022 - 19:13:30.064 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @413ms to org.eclipse.jetty.util.log.Slf4jLog
+13 03 2022 - 19:13:30.080 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+13 03 2022 - 19:13:30.096 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+13 03 2022 - 19:13:30.096 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+13 03 2022 - 19:13:30.361 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+13 03 2022 - 19:13:30.361 [main] INFO  io.javalin.Javalin - Javalin started in 297ms \o/
+13 03 2022 - 19:13:37.673 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 19:13:39.331 [JettyServerThreadPool-15] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: null value in column "date_of_birth" of relation "clients" violates not-null constraint
+  Detail: Failing row contains (6, Philip, Fry, 100 West 57th Street, null).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:134)
+	at com.revature.dao.ClientDao.addClient(ClientDao.java:64)
+	at com.revature.service.ClientService.addClient(ClientService.java:43)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:29)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 19:31:57.779 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+13 03 2022 - 19:31:57.795 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @383ms to org.eclipse.jetty.util.log.Slf4jLog
+13 03 2022 - 19:31:57.795 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+13 03 2022 - 19:31:57.810 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+13 03 2022 - 19:31:57.810 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+13 03 2022 - 19:31:58.070 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+13 03 2022 - 19:31:58.070 [main] INFO  io.javalin.Javalin - Javalin started in 275ms \o/
+13 03 2022 - 19:32:08.852 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 19:32:10.393 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
+java.lang.NullPointerException: null
+	at com.revature.dao.ClientDao.addClient(ClientDao.java:62)
+	at com.revature.service.ClientService.addClient(ClientService.java:43)
+	at com.revature.controller.ClientController.lambda$new$2(ClientController.java:29)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 19:43:47.642 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+13 03 2022 - 19:43:47.657 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @420ms to org.eclipse.jetty.util.log.Slf4jLog
+13 03 2022 - 19:43:47.657 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+13 03 2022 - 19:43:47.673 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+13 03 2022 - 19:43:47.673 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+13 03 2022 - 19:43:47.938 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+13 03 2022 - 19:43:47.938 [main] INFO  io.javalin.Javalin - Javalin started in 281ms \o/
+13 03 2022 - 19:44:16.204 [JettyServerThreadPool-18] INFO  com.revature.main.Project0 - POST request received for /clients
+13 03 2022 - 19:45:08.739 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients
+13 03 2022 - 19:46:34.875 [JettyServerThreadPool-24] INFO  com.revature.main.Project0 - GET request received for /clients/1
+13 03 2022 - 19:46:55.150 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - PUT request received for /clients/7
+13 03 2022 - 19:46:55.153 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
+com.fasterxml.jackson.core.JsonParseException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries
+ at [Source: (String)"{
+    "firstName": "Elliot",
+    "lastName": "Alderson",
+    "address": "123 abc Street"
+    "dateOfBirth": "1990-01-01"
+}"; line: 5, column: 6]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:735)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:659)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._skipComma(ReaderBasedJsonParser.java:2382)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextFieldName(ReaderBasedJsonParser.java:947)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:320)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at io.javalin.plugin.json.JavalinJackson.fromJsonString(JavalinJackson.kt:37)
+	at io.javalin.http.Context.bodyAsClass(Context.kt:114)
+	at com.revature.controller.ClientController.lambda$new$3(ClientController.java:36)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+13 03 2022 - 19:47:16.345 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - PUT request received for /clients/7
+13 03 2022 - 19:47:17.314 [JettyServerThreadPool-14] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "last_name"
+  Position: 36
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:134)
+	at com.revature.dao.ClientDao.updateClient(ClientDao.java:104)
+	at com.revature.service.ClientService.updateClient(ClientService.java:53)
+	at com.revature.controller.ClientController.lambda$new$3(ClientController.java:37)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+14 03 2022 - 19:11:13.964 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+14 03 2022 - 19:11:13.977 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @439ms to org.eclipse.jetty.util.log.Slf4jLog
+14 03 2022 - 19:11:13.982 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+14 03 2022 - 19:11:14.007 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+14 03 2022 - 19:11:14.007 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+14 03 2022 - 19:11:14.282 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+14 03 2022 - 19:11:14.282 [main] INFO  io.javalin.Javalin - Javalin started in 303ms \o/
+14 03 2022 - 19:11:39.199 [JettyServerThreadPool-18] INFO  com.revature.main.Project0 - POST request received for /clients
+14 03 2022 - 19:12:13.984 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients
+14 03 2022 - 19:12:55.668 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/1
+14 03 2022 - 19:13:11.388 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - PUT request received for /clients/3
+14 03 2022 - 19:13:30.018 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - DELETE request received for /clients/3
+14 03 2022 - 19:13:59.290 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts
+14 03 2022 - 19:13:59.295 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
+com.fasterxml.jackson.core.JsonParseException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries
+ at [Source: (String)"{
+    "balance": 500
+    "type": "Joint Checking"
+}"; line: 3, column: 6]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:735)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:659)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._skipComma(ReaderBasedJsonParser.java:2382)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextFieldName(ReaderBasedJsonParser.java:947)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:320)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+	at io.javalin.plugin.json.JavalinJackson.fromJsonString(JavalinJackson.kt:37)
+	at io.javalin.http.Context.bodyAsClass(Context.kt:114)
+	at com.revature.controller.AccountController.lambda$new$2(AccountController.java:42)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+14 03 2022 - 19:14:41.354 [JettyServerThreadPool-11] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts
+14 03 2022 - 19:15:10.577 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+14 03 2022 - 19:15:32.041 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+14 03 2022 - 19:15:57.273 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+14 03 2022 - 19:16:07.402 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+14 03 2022 - 19:16:16.174 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1
+14 03 2022 - 19:16:35.553 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - PUT request received for /clients/1/accounts/5
+14 03 2022 - 19:16:37.470 [JettyServerThreadPool-15] WARN  c.r.controller.ExceptionController - User attempted to retrieve a resource that was not found. Exception message: Account with id 5 was not found for client with id 1
+14 03 2022 - 19:17:10.457 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - PUT request received for /clients/1/accounts/6
+14 03 2022 - 19:17:28.852 [JettyServerThreadPool-12] INFO  com.revature.main.Project0 - DELETE request received for /clients/1/accounts/6
+14 03 2022 - 19:17:55.681 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts/1/transactions
+14 03 2022 - 19:18:17.818 [JettyServerThreadPool-12] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+14 03 2022 - 19:18:33.424 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions/1
+14 03 2022 - 19:19:02.463 [JettyServerThreadPool-12] INFO  com.revature.main.Project0 - PUT request received for /clients/1/accounts/1/transactions/5
+14 03 2022 - 19:19:20.418 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - DELETE request received for /clients/1/accounts/1/transactions/5
+15 03 2022 - 17:08:41.912 [Test worker] INFO  com.revature.service.ClientService - getClient method called
+15 03 2022 - 17:08:41.943 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 17:08:41.950 [Test worker] INFO  com.revature.service.ClientService - updateClient method called
+15 03 2022 - 17:08:41.952 [Test worker] INFO  com.revature.service.ClientService - updateClient method called
+15 03 2022 - 17:08:41.954 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 17:08:41.956 [Test worker] INFO  com.revature.service.ClientService - getClients method called
+15 03 2022 - 17:08:41.957 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 17:08:41.959 [Test worker] INFO  com.revature.service.ClientService - deleteClient method called
+15 03 2022 - 17:08:41.960 [Test worker] INFO  com.revature.service.ClientService - getClient method called
+15 03 2022 - 17:08:41.961 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 17:08:41.964 [Test worker] INFO  com.revature.service.ClientService - getClient method called
+15 03 2022 - 17:08:41.965 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 17:08:41.966 [Test worker] INFO  com.revature.service.ClientService - getClient method called
+15 03 2022 - 17:08:41.968 [Test worker] INFO  com.revature.service.ClientService - deleteClient method called
+15 03 2022 - 17:09:19.718 [Test worker] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 17:09:19.734 [Test worker] INFO  c.r.service.TransactionService - addTransaction method called
+15 03 2022 - 17:09:19.736 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+15 03 2022 - 17:09:19.740 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+15 03 2022 - 17:09:19.742 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+15 03 2022 - 17:09:19.744 [Test worker] INFO  c.r.service.TransactionService - addTransaction method called
+15 03 2022 - 17:09:19.746 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+15 03 2022 - 17:09:19.748 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+15 03 2022 - 17:09:19.751 [Test worker] INFO  c.r.service.TransactionService - deleteTransaction method called
+15 03 2022 - 17:09:19.753 [Test worker] INFO  c.r.service.TransactionService - addTransaction method called
+15 03 2022 - 17:09:19.756 [Test worker] INFO  c.r.service.TransactionService - updateTransaction method called
+15 03 2022 - 17:09:19.758 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+15 03 2022 - 17:09:19.760 [Test worker] INFO  c.r.service.TransactionService - updateTransaction method called
+15 03 2022 - 17:09:19.761 [Test worker] INFO  c.r.service.TransactionService - deleteTransaction method called
+15 03 2022 - 17:09:27.356 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+15 03 2022 - 17:09:27.369 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+15 03 2022 - 17:09:27.373 [Test worker] INFO  com.revature.service.AccountService - addAccount method called
+15 03 2022 - 17:09:27.376 [Test worker] INFO  com.revature.service.AccountService - getAccounts method called
+15 03 2022 - 17:09:27.381 [Test worker] INFO  com.revature.service.AccountService - addAccount method called
+15 03 2022 - 17:09:27.385 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+15 03 2022 - 17:09:27.387 [Test worker] INFO  com.revature.service.AccountService - addAccount method called
+15 03 2022 - 17:09:27.389 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+15 03 2022 - 17:09:27.391 [Test worker] INFO  com.revature.service.AccountService - deleteAccount method called
+15 03 2022 - 17:09:27.393 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+15 03 2022 - 17:09:27.396 [Test worker] INFO  com.revature.service.AccountService - getAccounts method called
+15 03 2022 - 17:09:27.398 [Test worker] INFO  com.revature.service.AccountService - deleteAccount method called
+15 03 2022 - 17:09:27.401 [Test worker] INFO  com.revature.service.AccountService - updateAccount method called
+15 03 2022 - 17:09:27.404 [Test worker] INFO  com.revature.service.AccountService - updateAccount method called
+15 03 2022 - 17:09:27.406 [Test worker] INFO  com.revature.service.AccountService - getAccounts method called
+15 03 2022 - 18:44:30.935 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+15 03 2022 - 18:44:30.946 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @403ms to org.eclipse.jetty.util.log.Slf4jLog
+15 03 2022 - 18:44:30.950 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15 03 2022 - 18:44:30.971 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+15 03 2022 - 18:44:30.971 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+15 03 2022 - 18:44:31.248 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+15 03 2022 - 18:44:31.249 [main] INFO  io.javalin.Javalin - Javalin started in 303ms \o/
+15 03 2022 - 18:44:50.826 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - POST request received for /clients
+15 03 2022 - 18:44:51.061 [JettyServerThreadPool-15] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 18:45:12.676 [JettyServerThreadPool-11] INFO  com.revature.main.Project0 - POST request received for /clients
+15 03 2022 - 18:45:12.676 [JettyServerThreadPool-11] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 18:45:12.677 [JettyServerThreadPool-11] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: First name must only have alphabetical characters. First name input was 1234
+15 03 2022 - 18:45:24.690 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients
+15 03 2022 - 18:45:24.690 [JettyServerThreadPool-17] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 18:45:24.691 [JettyServerThreadPool-17] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Invalid address. Input was Not An Address
+15 03 2022 - 18:45:57.384 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients
+15 03 2022 - 18:45:57.385 [JettyServerThreadPool-17] INFO  com.revature.service.ClientService - addClient method called
+15 03 2022 - 18:45:57.385 [JettyServerThreadPool-17] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Invalid address. Input was ABC 123
+15 03 2022 - 18:46:13.880 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - GET request received for /clients
+15 03 2022 - 18:46:13.881 [JettyServerThreadPool-14] INFO  com.revature.service.ClientService - getClients method called
+15 03 2022 - 18:46:23.860 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1
+15 03 2022 - 18:46:23.861 [JettyServerThreadPool-17] INFO  com.revature.service.ClientService - getClient method called
+15 03 2022 - 18:46:29.272 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - GET request received for /clients/10
+15 03 2022 - 18:46:29.272 [JettyServerThreadPool-14] INFO  com.revature.service.ClientService - getClient method called
+15 03 2022 - 18:46:30.217 [JettyServerThreadPool-14] WARN  c.r.controller.ExceptionController - User attempted to retrieve a resource that was not found. Exception message: Client with id 10 was not found
+15 03 2022 - 18:46:34.670 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/a
+15 03 2022 - 18:46:34.670 [JettyServerThreadPool-17] INFO  com.revature.service.ClientService - getClient method called
+15 03 2022 - 18:46:34.670 [JettyServerThreadPool-17] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Id provided for client must be a valid int
+15 03 2022 - 18:46:40.183 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - PUT request received for /clients/3
+15 03 2022 - 18:46:40.183 [JettyServerThreadPool-14] INFO  com.revature.service.ClientService - updateClient method called
+15 03 2022 - 18:47:08.768 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - DELETE request received for /clients/3
+15 03 2022 - 18:47:08.768 [JettyServerThreadPool-17] INFO  com.revature.service.ClientService - deleteClient method called
+15 03 2022 - 18:47:19.554 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts
+15 03 2022 - 18:47:19.558 [JettyServerThreadPool-14] INFO  com.revature.service.AccountService - addAccount method called
+15 03 2022 - 18:47:40.085 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts
+15 03 2022 - 18:47:40.085 [JettyServerThreadPool-17] INFO  com.revature.service.AccountService - addAccount method called
+15 03 2022 - 18:47:41.036 [JettyServerThreadPool-17] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: A negative balance is not valid. Balance provided was -500
+15 03 2022 - 18:48:07.678 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts
+15 03 2022 - 18:48:07.678 [JettyServerThreadPool-14] INFO  com.revature.service.AccountService - addAccount method called
+15 03 2022 - 18:48:08.628 [JettyServerThreadPool-14] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Account type must contain one of Checking or Savings. Input was ABC
+15 03 2022 - 18:48:22.087 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+15 03 2022 - 18:48:22.087 [JettyServerThreadPool-17] INFO  com.revature.service.AccountService - getAccounts method called
+15 03 2022 - 18:48:30.129 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+15 03 2022 - 18:48:30.129 [JettyServerThreadPool-14] INFO  com.revature.service.AccountService - getAccounts method called
+15 03 2022 - 18:48:39.995 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+15 03 2022 - 18:48:39.996 [JettyServerThreadPool-17] INFO  com.revature.service.AccountService - getAccounts method called
+15 03 2022 - 18:48:49.489 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+15 03 2022 - 18:48:49.489 [JettyServerThreadPool-14] INFO  com.revature.service.AccountService - getAccounts method called
+15 03 2022 - 18:48:56.010 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1
+15 03 2022 - 18:48:56.010 [JettyServerThreadPool-17] INFO  com.revature.service.AccountService - getAccount method called
+15 03 2022 - 18:49:02.419 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/5
+15 03 2022 - 18:49:02.420 [JettyServerThreadPool-14] INFO  com.revature.service.AccountService - getAccount method called
+15 03 2022 - 18:49:04.523 [JettyServerThreadPool-14] WARN  c.r.controller.ExceptionController - User attempted to retrieve a resource that was not found. Exception message: Account with id 5 was not found for client with id 1
+15 03 2022 - 18:49:12.415 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - PUT request received for /clients/1/accounts/6
+15 03 2022 - 18:49:12.416 [JettyServerThreadPool-17] INFO  com.revature.service.AccountService - updateAccount method called
+15 03 2022 - 18:49:22.194 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - DELETE request received for /clients/1/accounts/6
+15 03 2022 - 18:49:22.194 [JettyServerThreadPool-14] INFO  com.revature.service.AccountService - deleteAccount method called
+15 03 2022 - 18:49:33.911 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts/1/transactions
+15 03 2022 - 18:49:33.913 [JettyServerThreadPool-17] INFO  c.r.service.TransactionService - addTransaction method called
+15 03 2022 - 18:49:49.419 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 18:49:49.419 [JettyServerThreadPool-14] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 18:50:03.892 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 18:50:03.892 [JettyServerThreadPool-17] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 18:50:07.105 [JettyServerThreadPool-17] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: The column index is out of range: 2, number of columns: 1.
+	at org.postgresql.core.v3.SimpleParameterList.bind(SimpleParameterList.java:70)
+	at org.postgresql.core.v3.SimpleParameterList.setStringParameter(SimpleParameterList.java:133)
+	at org.postgresql.jdbc.PgPreparedStatement.bindString(PgPreparedStatement.java:1058)
+	at org.postgresql.jdbc.PgPreparedStatement.setString(PgPreparedStatement.java:364)
+	at org.postgresql.jdbc.PgPreparedStatement.setString(PgPreparedStatement.java:350)
+	at com.revature.dao.TransactionDao.getTransactions(TransactionDao.java:65)
+	at com.revature.service.TransactionService.getTransactions(TransactionService.java:67)
+	at com.revature.controller.TransactionController.lambda$new$1(TransactionController.java:33)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+15 03 2022 - 18:50:21.373 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions/1
+15 03 2022 - 18:50:21.374 [JettyServerThreadPool-14] INFO  c.r.service.TransactionService - getTransaction method called
+15 03 2022 - 18:50:33.284 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - PUT request received for /clients/1/accounts/1/transactions/5
+15 03 2022 - 18:50:33.284 [JettyServerThreadPool-17] INFO  c.r.service.TransactionService - updateTransaction method called
+15 03 2022 - 18:50:45.171 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - DELETE request received for /clients/1/accounts/1/transactions/5
+15 03 2022 - 18:50:45.172 [JettyServerThreadPool-14] INFO  c.r.service.TransactionService - deleteTransaction method called
+15 03 2022 - 18:56:40.122 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+15 03 2022 - 18:56:40.130 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @428ms to org.eclipse.jetty.util.log.Slf4jLog
+15 03 2022 - 18:56:40.134 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15 03 2022 - 18:56:40.151 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+15 03 2022 - 18:56:40.151 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+15 03 2022 - 18:56:40.435 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+15 03 2022 - 18:56:40.436 [main] INFO  io.javalin.Javalin - Javalin started in 305ms \o/
+15 03 2022 - 18:56:48.206 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 18:56:48.210 [JettyServerThreadPool-15] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 18:57:05.297 [JettyServerThreadPool-11] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts/1/transactions
+15 03 2022 - 18:57:05.327 [JettyServerThreadPool-11] INFO  c.r.service.TransactionService - addTransaction method called
+15 03 2022 - 18:57:28.180 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 18:57:28.180 [JettyServerThreadPool-16] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 18:57:40.033 [JettyServerThreadPool-17] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 18:57:40.033 [JettyServerThreadPool-17] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 19:08:07.740 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+15 03 2022 - 19:08:07.754 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @707ms to org.eclipse.jetty.util.log.Slf4jLog
+15 03 2022 - 19:08:07.758 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15 03 2022 - 19:08:07.776 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+15 03 2022 - 19:08:07.777 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+15 03 2022 - 19:08:08.155 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+15 03 2022 - 19:08:08.155 [main] INFO  io.javalin.Javalin - Javalin started in 401ms \o/
+15 03 2022 - 19:08:17.478 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 19:08:17.481 [JettyServerThreadPool-15] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 19:08:20.939 [JettyServerThreadPool-15] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: syntax error at or near "%"
+  Position: 71
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2675)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2365)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:355)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:490)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:408)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:166)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:118)
+	at com.revature.dao.TransactionDao.getTransactions(TransactionDao.java:67)
+	at com.revature.service.TransactionService.getTransactions(TransactionService.java:67)
+	at com.revature.controller.TransactionController.lambda$new$1(TransactionController.java:33)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+15 03 2022 - 19:08:53.200 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+15 03 2022 - 19:08:53.215 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @471ms to org.eclipse.jetty.util.log.Slf4jLog
+15 03 2022 - 19:08:53.219 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15 03 2022 - 19:08:53.241 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+15 03 2022 - 19:08:53.241 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+15 03 2022 - 19:08:53.628 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+15 03 2022 - 19:08:53.628 [main] INFO  io.javalin.Javalin - Javalin started in 413ms \o/
+15 03 2022 - 19:09:01.853 [JettyServerThreadPool-18] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 19:09:01.854 [JettyServerThreadPool-18] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 19:09:05.138 [JettyServerThreadPool-18] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: The column index is out of range: 2, number of columns: 1.
+	at org.postgresql.core.v3.SimpleParameterList.bind(SimpleParameterList.java:70)
+	at org.postgresql.core.v3.SimpleParameterList.setStringParameter(SimpleParameterList.java:133)
+	at org.postgresql.jdbc.PgPreparedStatement.bindString(PgPreparedStatement.java:1058)
+	at org.postgresql.jdbc.PgPreparedStatement.setString(PgPreparedStatement.java:364)
+	at org.postgresql.jdbc.PgPreparedStatement.setString(PgPreparedStatement.java:350)
+	at com.revature.dao.TransactionDao.getTransactions(TransactionDao.java:65)
+	at com.revature.service.TransactionService.getTransactions(TransactionService.java:67)
+	at com.revature.controller.TransactionController.lambda$new$1(TransactionController.java:33)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:750)
+15 03 2022 - 19:12:19.875 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+15 03 2022 - 19:12:19.891 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @708ms to org.eclipse.jetty.util.log.Slf4jLog
+15 03 2022 - 19:12:19.895 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15 03 2022 - 19:12:19.917 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+15 03 2022 - 19:12:19.917 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+15 03 2022 - 19:12:20.359 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+15 03 2022 - 19:12:20.360 [main] INFO  io.javalin.Javalin - Javalin started in 468ms \o/
+15 03 2022 - 19:12:30.996 [JettyServerThreadPool-21] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 19:12:30.997 [JettyServerThreadPool-21] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 19:36:35.524 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+15 03 2022 - 19:36:35.534 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @476ms to org.eclipse.jetty.util.log.Slf4jLog
+15 03 2022 - 19:36:35.537 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15 03 2022 - 19:36:35.556 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+15 03 2022 - 19:36:35.556 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+15 03 2022 - 19:36:35.856 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+15 03 2022 - 19:36:35.856 [main] INFO  io.javalin.Javalin - Javalin started in 322ms \o/
+15 03 2022 - 19:36:43.551 [JettyServerThreadPool-18] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 19:36:43.552 [JettyServerThreadPool-18] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 19:39:18.772 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+15 03 2022 - 19:39:18.782 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @528ms to org.eclipse.jetty.util.log.Slf4jLog
+15 03 2022 - 19:39:18.786 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+15 03 2022 - 19:39:18.805 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+15 03 2022 - 19:39:18.805 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+15 03 2022 - 19:39:19.104 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+15 03 2022 - 19:39:19.104 [main] INFO  io.javalin.Javalin - Javalin started in 321ms \o/
+15 03 2022 - 19:39:28.513 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 19:39:28.517 [JettyServerThreadPool-14] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 19:39:44.479 [JettyServerThreadPool-11] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 19:39:44.480 [JettyServerThreadPool-11] INFO  c.r.service.TransactionService - getTransactions method called
+15 03 2022 - 19:39:56.861 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+15 03 2022 - 19:39:56.861 [JettyServerThreadPool-16] INFO  c.r.service.TransactionService - getTransactions method called
+16 03 2022 - 07:22:37.717 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+16 03 2022 - 07:22:37.732 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @579ms to org.eclipse.jetty.util.log.Slf4jLog
+16 03 2022 - 07:22:37.735 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+16 03 2022 - 07:22:37.759 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+16 03 2022 - 07:22:37.759 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+16 03 2022 - 07:22:38.062 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+16 03 2022 - 07:22:38.062 [main] INFO  io.javalin.Javalin - Javalin started in 330ms \o/
+16 03 2022 - 07:22:40.802 [JettyServerThreadPool-14] INFO  com.revature.main.Project0 - POST request received for /clients
+16 03 2022 - 07:22:41.086 [JettyServerThreadPool-14] INFO  com.revature.service.ClientService - addClient method called
+16 03 2022 - 07:22:56.482 [JettyServerThreadPool-11] INFO  com.revature.main.Project0 - POST request received for /clients
+16 03 2022 - 07:22:56.482 [JettyServerThreadPool-11] INFO  com.revature.service.ClientService - addClient method called
+16 03 2022 - 07:22:56.484 [JettyServerThreadPool-11] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: First name must only have alphabetical characters. First name input was 1234
+16 03 2022 - 07:23:04.393 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - POST request received for /clients
+16 03 2022 - 07:23:04.394 [JettyServerThreadPool-16] INFO  com.revature.service.ClientService - addClient method called
+16 03 2022 - 07:23:04.394 [JettyServerThreadPool-16] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Invalid address. Input was ABC 123
+16 03 2022 - 07:23:09.527 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients
+16 03 2022 - 07:23:09.527 [JettyServerThreadPool-16] INFO  com.revature.service.ClientService - getClients method called
+16 03 2022 - 07:23:14.695 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1
+16 03 2022 - 07:23:14.695 [JettyServerThreadPool-15] INFO  com.revature.service.ClientService - getClient method called
+16 03 2022 - 07:23:19.001 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/10
+16 03 2022 - 07:23:19.001 [JettyServerThreadPool-16] INFO  com.revature.service.ClientService - getClient method called
+16 03 2022 - 07:23:19.966 [JettyServerThreadPool-16] WARN  c.r.controller.ExceptionController - User attempted to retrieve a resource that was not found. Exception message: Client with id 10 was not found
+16 03 2022 - 07:23:25.121 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/a
+16 03 2022 - 07:23:25.121 [JettyServerThreadPool-15] INFO  com.revature.service.ClientService - getClient method called
+16 03 2022 - 07:23:25.121 [JettyServerThreadPool-15] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Id provided for client must be a valid int
+16 03 2022 - 07:23:32.540 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - PUT request received for /clients/3
+16 03 2022 - 07:23:32.540 [JettyServerThreadPool-16] INFO  com.revature.service.ClientService - updateClient method called
+16 03 2022 - 07:23:41.841 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - DELETE request received for /clients/3
+16 03 2022 - 07:23:41.841 [JettyServerThreadPool-15] INFO  com.revature.service.ClientService - deleteClient method called
+16 03 2022 - 07:23:52.268 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts
+16 03 2022 - 07:23:52.272 [JettyServerThreadPool-16] INFO  com.revature.service.AccountService - addAccount method called
+16 03 2022 - 07:24:05.666 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts
+16 03 2022 - 07:24:05.666 [JettyServerThreadPool-15] INFO  com.revature.service.AccountService - addAccount method called
+16 03 2022 - 07:24:06.617 [JettyServerThreadPool-15] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: A negative balance is not valid. Balance provided was -500
+16 03 2022 - 07:24:11.418 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts
+16 03 2022 - 07:24:11.418 [JettyServerThreadPool-16] INFO  com.revature.service.AccountService - addAccount method called
+16 03 2022 - 07:24:12.368 [JettyServerThreadPool-16] WARN  c.r.controller.ExceptionController - User input was an illegal argument. Exception message: Account type must contain one of Checking or Savings. Input was ABC
+16 03 2022 - 07:24:19.129 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+16 03 2022 - 07:24:19.129 [JettyServerThreadPool-15] INFO  com.revature.service.AccountService - getAccounts method called
+16 03 2022 - 07:24:26.983 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+16 03 2022 - 07:24:26.983 [JettyServerThreadPool-16] INFO  com.revature.service.AccountService - getAccounts method called
+16 03 2022 - 07:24:33.322 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+16 03 2022 - 07:24:33.323 [JettyServerThreadPool-15] INFO  com.revature.service.AccountService - getAccounts method called
+16 03 2022 - 07:24:40.143 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts
+16 03 2022 - 07:24:40.144 [JettyServerThreadPool-16] INFO  com.revature.service.AccountService - getAccounts method called
+16 03 2022 - 07:24:46.802 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1
+16 03 2022 - 07:24:46.803 [JettyServerThreadPool-15] INFO  com.revature.service.AccountService - getAccount method called
+16 03 2022 - 07:24:54.764 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/5
+16 03 2022 - 07:24:54.765 [JettyServerThreadPool-16] INFO  com.revature.service.AccountService - getAccount method called
+16 03 2022 - 07:24:56.689 [JettyServerThreadPool-16] WARN  c.r.controller.ExceptionController - User attempted to retrieve a resource that was not found. Exception message: Account with id 5 was not found for client with id 1
+16 03 2022 - 07:25:02.453 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - PUT request received for /clients/1/accounts/6
+16 03 2022 - 07:25:02.454 [JettyServerThreadPool-15] INFO  com.revature.service.AccountService - updateAccount method called
+16 03 2022 - 07:25:11.684 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - DELETE request received for /clients/1/accounts/6
+16 03 2022 - 07:25:11.684 [JettyServerThreadPool-16] INFO  com.revature.service.AccountService - deleteAccount method called
+16 03 2022 - 07:25:22.672 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - POST request received for /clients/1/accounts/1/transactions
+16 03 2022 - 07:25:22.674 [JettyServerThreadPool-15] INFO  c.r.service.TransactionService - addTransaction method called
+16 03 2022 - 07:25:30.572 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+16 03 2022 - 07:25:30.572 [JettyServerThreadPool-16] INFO  c.r.service.TransactionService - getTransactions method called
+16 03 2022 - 07:25:40.522 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions
+16 03 2022 - 07:25:40.522 [JettyServerThreadPool-15] INFO  c.r.service.TransactionService - getTransactions method called
+16 03 2022 - 07:25:49.488 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - GET request received for /clients/1/accounts/1/transactions/1
+16 03 2022 - 07:25:49.488 [JettyServerThreadPool-16] INFO  c.r.service.TransactionService - getTransaction method called
+16 03 2022 - 07:25:55.439 [JettyServerThreadPool-15] INFO  com.revature.main.Project0 - PUT request received for /clients/1/accounts/1/transactions/5
+16 03 2022 - 07:25:55.440 [JettyServerThreadPool-15] INFO  c.r.service.TransactionService - updateTransaction method called
+16 03 2022 - 07:26:01.067 [JettyServerThreadPool-16] INFO  com.revature.main.Project0 - DELETE request received for /clients/1/accounts/1/transactions/5
+16 03 2022 - 07:26:01.067 [JettyServerThreadPool-16] INFO  c.r.service.TransactionService - deleteTransaction method called
+16 03 2022 - 07:26:23.100 [Test worker] INFO  com.revature.service.ClientService - getClient method called
+16 03 2022 - 07:26:23.167 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+16 03 2022 - 07:26:23.183 [Test worker] INFO  com.revature.service.ClientService - updateClient method called
+16 03 2022 - 07:26:23.190 [Test worker] INFO  com.revature.service.ClientService - updateClient method called
+16 03 2022 - 07:26:23.193 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+16 03 2022 - 07:26:23.197 [Test worker] INFO  com.revature.service.ClientService - getClients method called
+16 03 2022 - 07:26:23.199 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+16 03 2022 - 07:26:23.201 [Test worker] INFO  com.revature.service.ClientService - deleteClient method called
+16 03 2022 - 07:26:23.203 [Test worker] INFO  com.revature.service.ClientService - getClient method called
+16 03 2022 - 07:26:23.204 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+16 03 2022 - 07:26:23.209 [Test worker] INFO  com.revature.service.ClientService - getClient method called
+16 03 2022 - 07:26:23.211 [Test worker] INFO  com.revature.service.ClientService - addClient method called
+16 03 2022 - 07:26:23.213 [Test worker] INFO  com.revature.service.ClientService - getClient method called
+16 03 2022 - 07:26:23.214 [Test worker] INFO  com.revature.service.ClientService - deleteClient method called
+16 03 2022 - 07:26:30.534 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+16 03 2022 - 07:26:30.548 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+16 03 2022 - 07:26:30.551 [Test worker] INFO  com.revature.service.AccountService - addAccount method called
+16 03 2022 - 07:26:30.553 [Test worker] INFO  com.revature.service.AccountService - getAccounts method called
+16 03 2022 - 07:26:30.555 [Test worker] INFO  com.revature.service.AccountService - addAccount method called
+16 03 2022 - 07:26:30.558 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+16 03 2022 - 07:26:30.559 [Test worker] INFO  com.revature.service.AccountService - addAccount method called
+16 03 2022 - 07:26:30.562 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+16 03 2022 - 07:26:30.564 [Test worker] INFO  com.revature.service.AccountService - deleteAccount method called
+16 03 2022 - 07:26:30.567 [Test worker] INFO  com.revature.service.AccountService - getAccount method called
+16 03 2022 - 07:26:30.569 [Test worker] INFO  com.revature.service.AccountService - getAccounts method called
+16 03 2022 - 07:26:30.570 [Test worker] INFO  com.revature.service.AccountService - deleteAccount method called
+16 03 2022 - 07:26:30.572 [Test worker] INFO  com.revature.service.AccountService - updateAccount method called
+16 03 2022 - 07:26:30.573 [Test worker] INFO  com.revature.service.AccountService - updateAccount method called
+16 03 2022 - 07:26:30.577 [Test worker] INFO  com.revature.service.AccountService - getAccounts method called
+16 03 2022 - 07:26:37.590 [Test worker] INFO  c.r.service.TransactionService - getTransactions method called
+16 03 2022 - 07:26:37.614 [Test worker] INFO  c.r.service.TransactionService - addTransaction method called
+16 03 2022 - 07:26:37.618 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+16 03 2022 - 07:26:37.622 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+16 03 2022 - 07:26:37.633 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+16 03 2022 - 07:26:37.636 [Test worker] INFO  c.r.service.TransactionService - addTransaction method called
+16 03 2022 - 07:26:37.639 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+16 03 2022 - 07:26:37.642 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+16 03 2022 - 07:26:37.647 [Test worker] INFO  c.r.service.TransactionService - deleteTransaction method called
+16 03 2022 - 07:26:37.653 [Test worker] INFO  c.r.service.TransactionService - addTransaction method called
+16 03 2022 - 07:26:37.656 [Test worker] INFO  c.r.service.TransactionService - updateTransaction method called
+16 03 2022 - 07:26:37.659 [Test worker] INFO  c.r.service.TransactionService - getTransaction method called
+16 03 2022 - 07:26:37.662 [Test worker] INFO  c.r.service.TransactionService - updateTransaction method called
+16 03 2022 - 07:26:37.664 [Test worker] INFO  c.r.service.TransactionService - deleteTransaction method called
